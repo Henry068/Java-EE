@@ -1,0 +1,22 @@
+public class ReverseNumber {
+    
+    public static void main(String[] args) {
+        String test = "12345";
+        
+        System.out.println(reverse(test)); // 54321
+
+    }
+    
+    public static String reverse(String str) {
+        // TODO: 幫我填上內容，如何反轉一個字串
+
+        String ReverseString = new StringBuffer(test ).reverse().toString();
+
+        System.out.println(test);
+
+        System.out.println(reverse);
+
+        return "ReverseString"; // 這裡可以自由改
+    }
+    
+}
