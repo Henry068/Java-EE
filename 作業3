@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="BIG5">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Java_EE-作業3</title>
+</head>
+<body>
+    <div class="container">
+      <h1>課程報名表</h1>
+      <form>
+          E-mail:<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入 E-mail">
+          <small id="emailHelp" class="form-text text-muted">我們會保護你的 Email , 不會任意的分享</small>
+          
+                                    姓名:<input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="請輸入 你的姓名">
+          <small id="nameHelp" class="form-text text-muted">我們會保護你的 個人姓名 , 不會任意的分享</small>
+          
+			性別
+			<p>
+			<input type="radio" name="sexual" value="boy">:男
+			<input type="radio" name="sexual" value="girl">:女
+			<input type="radio" name="sexual" value="neutral">:中性
+			<p>
+
+                                            連絡電話:<input type="number" class="form-control" id="exampleInputPhone" aria-describedby="phoneHelp" placeholder="請輸入 你的電話">
+          	<small id="phoneHelp" class="form-text text-muted">我們會保護你的 個人電話 , 不會任意的分享</small>
+		
+			<p>
+			資訊來源
+			<p>
+			<input type="checkbox" name="habit" value="newspaper">:報紙
+			<input type="checkbox" name="habit" value="e-mail">:e-mail
+			<input type="checkbox" name="habit" value="website">:網站
+			<p>
+			居住城市: <select>
+				<option>台北市</option>
+				<option>新北市</option>
+				<option>桃園市</option>
+				<option>新竹市</option>			
+			</select>
+			<p>
+			<button type="submit" class="btn btn-primary">送出</button>      
+      	</form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
