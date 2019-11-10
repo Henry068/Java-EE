@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="BIG5">
+	<title>HomeWork2,2-1</title>
+	<style type="text/css">
+		th{
+		color:red;
+		}
+	</style>	
+	<!--要做漸層字，顯示不出來，
+		<style type="text/css">
+		th{
+			
+			color: -webkit-linear-gradient(left,darkred ,red);
+			color: -o-linear-gradient(right,darkred,red);
+			color: -moz-linear-gradient(right,darkred,red);
+			color: linear-gradient(to right,darkred,red);
+		}
+		</style>
+	 -->
+</head>
+<body>
+	<a href="http://www.google.com.tw">google連結</a>	
+	<p>
+	<img src="https://image.peoplenews.tw/news/72c4ae45-cd5e-4dac-b800-57b29b007c57.jpg" alt="喔喔~該圖片連結失效!" width="100">
+	<table border="1">
+		<tr>
+			<th> 編號 </th>
+			<th> 名稱 </th>
+			<th> 特色 </th>
+		</tr>
+		<tr>
+			<td> 1 </td>
+			<td> 比特幣 </td>
+			<td> 骨董幣,限量發行 </td>
+		</tr>
+		<tr>
+			<td> 2 </td>
+			<td> USTD </td>
+			<td> 穩定幣,跟著美金匯率 </td>
+		</tr>
+	</table>
+</body>
+</html>
