@@ -1,0 +1,59 @@
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/registerServlet")
+public class registerServlet extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 接受使用者的參數
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String urlRegister  = "register.jsp";
+		String passwordenter=request.getParameter("passwordenter");
+		String passwordverification=request.getParameter("passwordverification");
+
+
+		if(registerValid.isValidEmail(email) && registerValid.isValidPhone(phone) ) {
+			// 如果 Email & Phone合法，就導到註冊成功頁
+			request.setAttribute("userEmail", email);
+			String urlFinish  = "registerFinish.jsp";
+			request.getRequestDispatcher(urlFinish).forward(request, response);
+			
+			} else if(registerValid.isValidEmail(email) == false && registerValid.isValidPhone(phone) == true ) {
+			// 如果 Email 不合法，就導回原來的註冊頁
+				request.setAttribute("emailErrorMsg", "請輸入正確的Email");
+				request.getRequestDispatcher(urlRegister).forward(request, response);
+
+			}else if(registerValid.isValidEmail(email) == true && registerValid.isValidPhone(phone)  == false) {
+				// 如果 Phone 不合法，就導回原來的註冊頁
+				request.setAttribute("phoneErrorMsg", "請輸入正確的Phone");
+				request.getRequestDispatcher(urlRegister).forward(request, response);
+
+			}else {
+				// 如果 Email & Phone 不合法，就導回原來的註冊頁
+				request.setAttribute("emailErrorMsg", "請輸入正確的Email");
+				request.setAttribute("phoneErrorMsg", "請輸入正確的Phone");
+				request.getRequestDispatcher(urlRegister).forward(request, response);	
+			}
+		
+		if(passwordenter == passwordverification) {
+			// 如果 password一致，就導到註冊成功頁
+				String urlFinish  = "registerFinish.jsp";
+			request.getRequestDispatcher(urlFinish).forward(request, response);
+			}else {
+				request.setAttribute("passwordErrorMsg", "password不一致");
+				request.getRequestDispatcher(urlRegister).forward(request, response);
+			}
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
