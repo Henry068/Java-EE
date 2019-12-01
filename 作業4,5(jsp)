@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<title>Hello, world!</title>
+<style>
+th {
+	color: -webkit-linear-gradient(left, darkred, red);
+	color: -o-linear-gradient(right, darkred, red);
+	color: -moz-linear-gradient(right, darkred, red);
+	color: linear-gradient(to right, darkred, red);
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>歡迎註冊 Shopping 帳戶</h1>
+
+		<form action="registerServlet" method="post">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label> <input
+					type="text" class="form-control" id="exampleInputEmail1"
+					name="email" aria-describedby="emailHelp" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">我們會保護你的
+					Email , 不會任意的分享</small>
+				<small id="emailHelp" class="form-text text-danger">
+					<% 
+					if (request.getAttribute("emailErrorMsg")!=null)
+						{
+						out.println(request.getAttribute("emailErrorMsg"));
+						} 
+					%>
+				</small>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputphone">連絡電話</label> <input 
+					type="number" class="form-control" id="exampleInputPhone"
+					name="phone" aria-describedby="phoneHelp" placeholder="請輸入 你的電話">
+          		<small id="phoneHelp" class="form-text text-muted">我們會保護你的個人電話 , 不會任意的分享</small>
+          		<small id="emailHelp" class="form-text text-danger">
+					<% 
+					if (request.getAttribute("phoneErrorMsg")!=null)
+						{
+						out.println(request.getAttribute("phoneErrorMsg"));
+						} 
+					%>
+				</small>	
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label> <input
+					name="password" type="password" class="form-control"
+					id="exampleInputPassword1" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Confirm Password</label> <input
+					name="password" type="password" class="form-control"
+					id="exampleInputPassword1" placeholder="Password">
+          		<small id="passwordHelp" class="form-text text-danger">
+					<% 
+					if (request.getAttribute("passwordErrorMsg")!=null)
+						{
+						out.println(request.getAttribute("passwordErrorMsg"));
+						} 
+					%>
+				</small>					
+			</div>
+			<button type="submit" class="btn btn-primary">送出</button>
+		</form>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
